@@ -1,14 +1,21 @@
 
+.container_app {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
+#create-employee > div:nth-child(10) {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  }
 
-
-
-
+  
 #create-employee {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 25%;
   height: 26rem;
 }
 

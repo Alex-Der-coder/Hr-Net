@@ -307,7 +307,7 @@ function Index() {
 
 
   return (
-    <div>
+    <div className='container_app'>
     <div className="title">
     <h1>HRnet</h1>
     <Link to="/employer">View Current Employees</Link>
