@@ -4,20 +4,16 @@ import {
   useMaterialReactTable,
 } from 'material-react-table';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+
 
 
 const Employer = () => {
 
-  const [data, setData] = useState([]);
+  const datatest = useSelector((state) => state.employeeState.data);
+  console.log(datatest);
 
-  useEffect(() => {
-    const storedEmployees = JSON.parse(localStorage.getItem('employees'));
-    if (storedEmployees) {
-      setData(storedEmployees);
-    }
-  }, []);
-
-  console.log(data);
   //should be memoized or stable
   const columns = useMemo(
     () => [
@@ -79,7 +75,7 @@ const Employer = () => {
 
   const table = useMaterialReactTable({
     columns,
-    data, //data must be memoized or stable (useState, useMemo, defined outside of this component, etc.)
+    data: datatest, //data must be memoized or stable (useState, useMemo, defined outside of this component, etc.)
   });
 
   return (
